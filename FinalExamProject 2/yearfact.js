@@ -57,7 +57,7 @@ app.get("/fact", (request, response) => {
 });
 
 app.get("/processYear", async(request, response) =>{
-    let {year} = request.body;
+    let {year} = request.query;
 
     const url = `https://numbersapi.p.rapidapi.com/${year}/year?fragment=true&json=true`;
     let obj;
@@ -103,7 +103,7 @@ app.get("/history", (request, response) =>{
 });
 
 app.get("/processHistory", async(request, response) =>{
-    let {year} = request.body;
+    let {year} = request.query;
 
     if (year == "All") {
         try {

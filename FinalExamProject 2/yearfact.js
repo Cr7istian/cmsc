@@ -1,6 +1,6 @@
 const http = require('http');
 const path = require('path')
-require("dotenv").config({ path: path.resolve(__dirname, 'secrets/.env') }) 
+require("dotenv").config({ path: path.resolve(__dirname, '/etc/secrets/.env') }) 
 const express = require('express');
 const app = express();
 const bodyParser = require("body-parser");
@@ -56,8 +56,8 @@ app.get("/fact", (request, response) => {
     
 });
 
-app.get("/processYear", async(request, response) =>{
-    let {year} = request.query;
+app.post("/processYear", async(request, response) =>{
+    let {year} = request.body;
 
     const url = `https://numbersapi.p.rapidapi.com/${year}/year?fragment=true&json=true`;
     let obj;
@@ -102,8 +102,8 @@ app.get("/history", (request, response) =>{
 
 });
 
-app.get("/processHistory", async(request, response) =>{
-    let {year} = request.query;
+app.post("/processHistory", async(request, response) =>{
+    let {year} = request.body;
 
     if (year == "All") {
         try {

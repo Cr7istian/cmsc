@@ -49,7 +49,7 @@ app.get("/", (request, response) => {
 });
 app.get("/fact", (request, response) => {
     const variables = {
-        address: `http://localhost:${portNumber}/processYear`
+        address: `/processYear`
     }
 
     response.render("getFact", variables);
@@ -95,7 +95,7 @@ app.get("/processYear", async(request, response) =>{
 
 app.get("/history", (request, response) =>{
     const variables = {
-        address: `http://localhost:${portNumber}/processHistory`
+        address: `/processHistory`
     }
 
     response.render("history", variables);

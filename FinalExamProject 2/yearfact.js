@@ -1,6 +1,6 @@
 const http = require('http');
 const path = require('path')
-require("dotenv").config({ path: path.resolve(__dirname, 'secrets/.env') }); 
+require("dotenv").config({ path: path.resolve(__dirname, 'secrets/.env') }) 
 const express = require('express');
 const app = express();
 const bodyParser = require("body-parser");
